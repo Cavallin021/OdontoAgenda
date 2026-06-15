@@ -5,6 +5,7 @@ import calendarSVG from "../assets/calendar.svg";
 import teethSVG from "../assets/teeth.svg";
 //import teethPlusSVG from "../assets/teethPlus.svg";
 import logoutSVG from "../assets/logout.svg";
+import MainLogo from "../../public/Main_Logo.png";
 
 export default function MenuBar() {
   const { setToken } = useAuth();
@@ -19,16 +20,16 @@ export default function MenuBar() {
     "flex gap-2 w-full p-4 h-14 bg-[#3F9691] items-center text-white text-center rounded-xs whitespace-nowrap overflow-hidden cursor-pointer select-none transition-all duration-200 hover:bg-[#318D7F] hover:shadow-lg";
 
   return (
-    <aside className="flex min-w-60 gap-2 flex-col w-1/8 h-screen bg-[#3F9691] border-r border-white/20">
+    <aside className="flex min-w-60 max-w-60 gap-2 flex-col w-1/8 h-screen bg-[#3f9691] border-r border-white/20">
       <div className="flex h-40 text-white items-center justify-center">
-        WIP LOGO
+        <img src={MainLogo} width="auto" />
       </div>
       <div
         className={menuButtonsTemplate}
         onClick={() => navigate("/dashboard")}
       >
         <img src={calendarSVG} width="32" height="32" alt="Calendário" />
-        Calendario
+        Calendário
       </div>
       <div
         className={menuButtonsTemplate}
@@ -39,6 +40,16 @@ export default function MenuBar() {
       >
         <img src={teethSVG} width="32" height="32" alt="Minhas Consultas" />
         Minhas consultas
+      </div>
+      <div
+        className={menuButtonsTemplate}
+        role="button"
+        onClick={() => {
+          navigate("/allAppointments");
+        }}
+      >
+        <img src={teethSVG} width="32" height="32" alt="Minhas Consultas" />
+        Todas as consultas
       </div>
       {/*
       <div

@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = "http://localhost:3000";
 
 async function request(endpoint: string, options: RequestInit = {}) {
   const url = `${BASE_URL}${endpoint}`;
@@ -21,6 +21,7 @@ async function request(endpoint: string, options: RequestInit = {}) {
 }
 
 export async function login(nickname: string, password: string) {
+  console.log("teste");
   return request("/auth/login", {
     method: "POST",
     body: JSON.stringify({ nickname, password }),

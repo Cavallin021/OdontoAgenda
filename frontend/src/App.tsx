@@ -10,10 +10,10 @@ import Login from "./pages/Login";
 import MenuBar from "./components/MenuBar";
 import Dashboard from "./pages/Dashboard";
 import Appointments from "./pages/Appointments";
-import NewAppointments from "./pages/NewAppointments";
+import AllAppointments from "./pages/AllAppointments";
 
 function AppRoutes() {
-  const { token } = useAuth(); // O AppRoutes agora pega o token do contexto
+  const { token } = useAuth();
 
   return (
     <Routes>
@@ -52,13 +52,13 @@ function AppRoutes() {
         }
       />
       <Route
-        path="/appointments/new"
+        path="/allAppointments"
         element={
           token ? (
             <main className="flex w-full min-h-screen">
               <MenuBar />
               <div className="flex-1">
-                <NewAppointments />
+                <AllAppointments />
               </div>
             </main>
           ) : (

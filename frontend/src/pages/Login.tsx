@@ -2,6 +2,7 @@ import { useState } from "react";
 import { login } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+// import logoBall from "../../public/LogoBolinha.png";
 
 export default function Login() {
   const [nickname, setNickname] = useState("");
@@ -34,12 +35,13 @@ export default function Login() {
     "w-full bg-transparent border-b border-[#318d7f] py-2 px-1 outline-none placeholder:text-white/70 text-white focus:border-[#0fcbba] transition-all";
 
   return (
-    <main className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#3f9691] via-[#5bab9a] to-[#bbdcb8]">
+    <main className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#bbdcb] via-[#5bab9a] to-[#3f9691]">
       <form
         onSubmit={handleLogin}
         className="w-full max-w-md p-10 flex flex-col items-center"
       >
         <div className="mb-6 text-[#bbdcb8]">
+          {/* <img src={logoBall} className="w-20 h-20" /> */}
           <svg
             className="w-20 h-20"
             fill="none"
